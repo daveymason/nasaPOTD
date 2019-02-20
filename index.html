@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<title> Nasa api demo </title>
+
+<header>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</header>
+
+<body>
+<div id="output">
+	<thing id="img"> </thing>
+	<p id="copyright"></p>
+
+	<h1 id="title"></h1>
+
+	<p id="explanation"></p>
+</div>
+</body>
+
+
+<script>
+	$.ajax({
+		url:"https://api.nasa.gov/planetary/apod?api_key=MrsVBoKDMoHuT4LoE4Jkz4pbyHfxFJyXS4zTtEpT",
+		success: function(data){
+		document.getElementById("img").innerHTML="<img src='"+data.url+"'style='width:100%;'/>";
+		document.getElementById("copyright").innerHTML=data.copyright;
+		document.getElementById("title").innerHTML=data.title;
+		document.getElementById("explanation").innerHTML=data.explanation;
+		}
+	});
+</script>
