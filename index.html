@@ -3,11 +3,13 @@
 
 <header>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </header>
 
 <body>
+<p id="pText"> Below is the NASA picture of the day </p>
 <div id="output">
-	<thing id="img"> </thing>
+	<tag id="img"> </tag>
 	<p id="copyright"></p>
 
 	<h1 id="title"></h1>
@@ -21,7 +23,7 @@
 	$.ajax({
 		url:"https://api.nasa.gov/planetary/apod?api_key=MrsVBoKDMoHuT4LoE4Jkz4pbyHfxFJyXS4zTtEpT",
 		success: function(data){
-		document.getElementById("img").innerHTML="<img src='"+data.url+"'style='width:100%;'/>";
+		document.getElementById("img").innerHTML="<img src='"+data.url+"'style='width:750px;'/>";
 		document.getElementById("copyright").innerHTML=data.copyright;
 		document.getElementById("title").innerHTML=data.title;
 		document.getElementById("explanation").innerHTML=data.explanation;
